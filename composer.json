@@ -1,0 +1,15 @@
+{
+    "name": "francheskaclairelopez/ws03-php",
+    "description": "Job seeker application",
+    "authors": [
+        {"name": "Francheska Claire Lopez",
+         "email": "lopezfrancheskaclaire@gmail.com"
+    }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
