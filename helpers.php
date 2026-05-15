@@ -79,14 +79,29 @@ function formatSalary($salary)
 }
 
 /**
- * Sanitize Data 
+ * Sanitize Data
  * 
- * @param string $dirty 
+ * @param string $dirty
  * 
  * @return string
  */
 
 function sanitize($dirty)
 {
-    return filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS);
+    return filter_var(
+        trim($dirty),
+        FILTER_SANITIZE_SPECIAL_CHARS
+    );
+}
+
+/**
+ * Redirect ot a given url
+ * 
+ * @param string $url
+ * 
+ * @return void
+ */
+function redirect($url)
+{
+    header("Location: {$url}");
 }
