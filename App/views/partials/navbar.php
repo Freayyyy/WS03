@@ -14,7 +14,7 @@ use Framework\Session;
                 <div class="flex justify-between items-center gap-4">
                     <div>Welcome <?= Session::get('user')['name'] ?></div>
                     <form method="POST" action="/auth/logout">
-                        <button type="submit" class="text-black inline hover:underline">Logout</button>
+                        <button type="submit" class="text-white inline hover:underline">Logout</button>
                     </form>
 
                     <a href="listings/create"

@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -18,9 +16,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-
-header, .bg-blue-900 {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+/* 1. HEADER (LOGIN, REGISTER, & POST A JOB) */
+header {
+    background-color: var(--primary) !important; 
     backdrop-filter: blur(10px); 
     border-radius: 20px;
     border-bottom: 1px solid var(--card-border) !important;
@@ -31,34 +29,40 @@ header, .bg-blue-900 {
 }
 
 header h1 a {
-    color: var(--primary) !important;
+    color: #ffffff !important; 
     font-weight: 800 !important;
     letter-spacing: -1.5px !important;
     font-size: 1.8rem !important;
     text-decoration: none !important;
 }
 
+header .text-gray-700, 
+header span, 
+header a,
+header div {
+    color: #ffffff !important;
+}
 
 header nav a.text-white {
-    color: #475569 !important; 
+    color: #f8fafc !important; 
     font-weight: 600 !important;
     font-size: 14px !important;
     margin-right: 15px !important;
     padding: 8px 18px !important; 
-    transition: all 0.3s ease !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     border-radius: 100px !important; 
     text-decoration: none !important;
     display: inline-block !important;
 }
 
 header nav a.text-white:hover {
-    background-color: var(--primary) !important; 
-    color: #ffffff !important; 
+    background: linear-gradient(135deg, var(--gold-solid) 0%, var(--yellow-light) 100%) !important;
+    color: var(--primary) !important; 
     transform: translateY(-1px) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
 }
 
-
-.bg-yellow-500, .hover\:bg-yellow-600:hover {
+.bg-yellow-500, .hover\:bg-yellow-600:hover, a[href*="create"] {
     background: linear-gradient(135deg, var(--gold-solid) 0%, var(--yellow-light) 100%) !important;
     color: var(--primary) !important; 
     font-weight: 700 !important;
@@ -70,20 +74,22 @@ header nav a.text-white:hover {
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 0.5px;
+    display: inline-block;
+    text-decoration: none !important;
 }
 
-.bg-yellow-500:hover {
+.bg-yellow-500:hover, a[href*="create"]:hover {
     transform: scale(1.05) !important;
     filter: brightness(1.1);
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4) !important;
 }
 
-
+/* 2. HERO / SHOWCASE */
 .showcase {
     background-image: url('../images/showcase.jpg');
     background-position: center !important;
     height: 450px !important;
-    border-radius: 0 0 40px 40px !important;
+    border-radius: 0px !important; 
     position: relative !important;
     display: flex !important;
     align-items: center !important;
@@ -97,7 +103,7 @@ header nav a.text-white:hover {
     height: 100% !important;
     background-color: rgba(15, 23, 42, 0.7) !important; 
     z-index: 1 !important;
-    border-radius: 0 0 40px 40px !important;
+    border-radius: 0px !important; 
 }
 
 .showcase .container {
@@ -112,15 +118,13 @@ header nav a.text-white:hover {
     color: white !important;
 }
 
-/* --- IPALIT ITO SA PANG-SEARCH BAR NA CODE MO --- */
-
 .showcase input {
     border-radius: 12px !important;
-    padding: 18px 25px !important; /* Nilakihan ang taas at baba mula 15px ginawang 18px */
+    padding: 18px 25px !important; 
     border: none !important;
-    font-size: 16px !important;    /* Pinataba ang text para hindi mag-zoom sa iPhone */
-    width: 100% !important;        /* Pinatagal/pinataba para sumakop sa buong lapad */
-    margin-bottom: 12px !important; /* May awang sa pagitan ng mga boxes kapag nagpatong */
+    font-size: 16px !important;    
+    width: 100% !important;        
+    margin-bottom: 12px !important; 
 }
 
 .showcase button.bg-blue-500 {
@@ -129,23 +133,22 @@ header nav a.text-white:hover {
     border-radius: 12px !important;
     font-weight: 800 !important;
     border: none !important;
-    padding: 18px 25px !important; /* Pinantay ang laki sa input boxes */
-    font-size: 16px !important;    /* Mas malaking text para sa button */
-    width: 100% !important;        /* Sasakupin din ang buong lapad ng phone screen */
-    margin-left: 0 !important;     /* Tinanggal ang margin sa kaliwa kasi patong na sila */
+    padding: 18px 25px !important; 
+    font-size: 16px !important;    
+    width: 100% !important;        
+    margin-left: 0 !important;     
 }
 
-/* Para naman sa laptop o desktop view, ibabalik natin sila sa magkakatabi */
 @media (min-width: 768px) {
     .showcase .container form, 
-    .showcase .container div { /* Depende kung form o div ang nakabalot sa kanila */
+    .showcase .container div { 
         display: flex !important;
         gap: 10px;
     }
     
     .showcase input {
         width: auto !important;
-        flex: 1;               /* Hahatiin ang espasyo nang patas */
+        flex: 1;               
         margin-bottom: 0 !important;
     }
     
@@ -154,8 +157,7 @@ header nav a.text-white:hover {
     }
 }
 
-
-/* 4. JOB LISTINGS */
+/* 3. JOB LISTINGS GRID & DETAILS BUTTONS */
 .grid > div {
     background: #ffffff !important;
     border: 1px solid var(--card-border) !important;
@@ -170,7 +172,6 @@ header nav a.text-white:hover {
     border-color: #cbd5e1 !important;
 }
 
-
 .grid h2 {
     font-weight: 700 !important;
     color: var(--primary) !important;
@@ -178,22 +179,30 @@ header nav a.text-white:hover {
     letter-spacing: -0.5px !important;
 }
 
-
 .bg-gray-100 {
     background-color: #f1f5f9 !important;
     border-radius: 16px !important;
     padding: 15px !important;
 }
 
-
-.bg-blue-500.text-white.rounded-full {
+.bg-gray-100 li span.bg-blue-500 {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     background-color: var(--primary) !important;
-    padding: 4px 12px !important;
-    font-size: 10px !important;
-    font-weight: 700 !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: 9999px !important;
+    width: 60px !important;
+    height: 30px !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
 }
 
-
+/* VIEW DETAILS / JOB CARD BUTTON */
 .text-indigo-700.bg-indigo-100 {
     background-color: #f8fafc !important;
     color: var(--primary) !important;
@@ -202,29 +211,53 @@ header nav a.text-white:hover {
     font-weight: 700 !important;
     text-align: center !important;
     text-decoration: none !important;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+/* Ginawang Gold Gradient ang Hover ng Details button */
 .text-indigo-700.bg-indigo-100:hover {
-    background-color: var(--primary) !important;
-    color: white !important;
+    background: linear-gradient(135deg, var(--gold-solid) 0%, var(--yellow-light) 100%) !important;
+    color: var(--primary) !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2) !important;
 }
 
-
-.bg-blue-800 {
-    background: #0f172a !important;
-    border-radius: 30px !important;
-    padding: 60px !important;
+/* 4. BANNER / UNLOCK YOUR CAREER POTENTIAL */
+/* Ginitna at inalisan ng rounded ang background para sa top banner lang */
+.bg-blue-900 {
+    background: #0f172a !important; 
+    border-radius: 0px !important;  
+    padding: 40px 0 !important;
+    text-align: center !important;
+    margin-top: -1px !important; 
 }
 
-
-section h2.text-xl.font-semibold {
+.bg-blue-900 .text-3xl {
     font-size: 1.75rem !important;
     font-weight: 700 !important;
-    color: var(--primary) !important;
+    color: #ffffff !important; 
     letter-spacing: -0.5px !important;
 }
 
-/* Back Link Styling */
+.bg-blue-900 p {
+    color: #cbd5e1 !important;
+}
+
+/* HIWALAY NA LOGIC PARA SA LOOKING TO HIRE (BOTTOM BANNER) */
+/* Dito natin pinilit na maging rounded at hindi maging center ang text alignment */
+.bg-blue-800 {
+    background: #0f172a !important; 
+    border-radius: 20px !important; /* Nilagyan ng swabeng rounded corners */
+    padding: 30px 40px !important;   /* Luwang ng spacing sa loob */
+    text-align: left !important;     /* Binalik sa kaliwa para pantay at malinis tingnan */
+}
+
+/* Sinisigurado nitong sumusunod sa left alignment ang mga h2 at p tag sa loob ng bottom banner */
+.bg-blue-800 h2, 
+.bg-blue-800 p {
+    text-align: left !important;
+}
+
 a.text-blue-700[href="/listings"] {
     color: var(--primary) !important;
     font-weight: 700 !important;
@@ -237,38 +270,44 @@ a.text-blue-700[href="/listings"]:hover {
     transform: translateX(-5px) !important;
 }
 
-
+/* 5. FORM BUTTONS */
 .bg-blue-500:not(.fa) {
     background-color: var(--primary) !important;
     border-radius: 100px !important;
-    padding: 8px 24px !important;
+    padding: 12px 24px !important;
+    border: none !important;
+}
+
+.bg-green-500 {
+    background-color: #22c55e !important; 
+    border-radius: 100px !important;         
+    padding: 12px 24px !important;         
     border: none !important;
 }
 
 .bg-red-500 {
     background-color: #ef4444 !important;
-    border-radius: 100px !important;
-    padding: 8px 24px !important;
+    border-radius: 100px !important;         
+    padding: 12px 24px !important;         
     border: none !important;
 }
 
-/* Details Headers (Requirements/Benefits) */
+/* Requirements & Benefits Header Titles */
 .text-blue-500:not(button) {
     color: var(--primary) !important;
     font-weight: 700 !important;
-    border-left: 4px solid var(--gold-solid) !important;
-    padding-left: 12px !important;
+    border-left: none !important; 
+    padding-left: 0 !important;   
     margin-bottom: 8px !important;
     display: block !important;
 }
-
 
 section .rounded-lg.shadow-md.bg-white.p-4 {
     border-radius: 20px !important;
     border: 1px solid var(--card-border) !important;
 }
 
-
+/* APPLY NOW / MAILTO BUTTON */
 a[href^="mailto:"] {
     background: var(--primary) !important; 
     color: white !important;
@@ -279,14 +318,16 @@ a[href^="mailto:"] {
     padding: 16px !important;
     border: none !important;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
-    transition: 0.4s !important;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     display: block !important;
     text-align: center !important;
     text-decoration: none !important;
 }
 
+/* Ginawang Gold Gradient din ang Hover ng Apply Now mailto link */
 a[href^="mailto:"]:hover {
     transform: translateY(-3px) !important;
-    background-color: #1e293b !important; 
-    box-shadow: 0 8px 16px rgba(15, 23, 42, 0.3) !important;
+    background: linear-gradient(135deg, var(--gold-solid) 0%, var(--yellow-light) 100%) !important;
+    color: var(--primary) !important; 
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4) !important;
 }
