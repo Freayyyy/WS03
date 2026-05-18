@@ -112,10 +112,15 @@ header nav a.text-white:hover {
     color: white !important;
 }
 
+/* --- IPALIT ITO SA PANG-SEARCH BAR NA CODE MO --- */
+
 .showcase input {
     border-radius: 12px !important;
-    padding: 15px 25px !important;
+    padding: 18px 25px !important; /* Nilakihan ang taas at baba mula 15px ginawang 18px */
     border: none !important;
+    font-size: 16px !important;    /* Pinataba ang text para hindi mag-zoom sa iPhone */
+    width: 100% !important;        /* Pinatagal/pinataba para sumakop sa buong lapad */
+    margin-bottom: 12px !important; /* May awang sa pagitan ng mga boxes kapag nagpatong */
 }
 
 .showcase button.bg-blue-500 {
@@ -123,9 +128,32 @@ header nav a.text-white:hover {
     color: var(--primary) !important;
     border-radius: 12px !important;
     font-weight: 800 !important;
-    margin-left: 10px !important;
     border: none !important;
+    padding: 18px 25px !important; /* Pinantay ang laki sa input boxes */
+    font-size: 16px !important;    /* Mas malaking text para sa button */
+    width: 100% !important;        /* Sasakupin din ang buong lapad ng phone screen */
+    margin-left: 0 !important;     /* Tinanggal ang margin sa kaliwa kasi patong na sila */
 }
+
+/* Para naman sa laptop o desktop view, ibabalik natin sila sa magkakatabi */
+@media (min-width: 768px) {
+    .showcase .container form, 
+    .showcase .container div { /* Depende kung form o div ang nakabalot sa kanila */
+        display: flex !important;
+        gap: 10px;
+    }
+    
+    .showcase input {
+        width: auto !important;
+        flex: 1;               /* Hahatiin ang espasyo nang patas */
+        margin-bottom: 0 !important;
+    }
+    
+    .showcase button.bg-blue-500 {
+        width: auto !important;
+    }
+}
+
 
 /* 4. JOB LISTINGS */
 .grid > div {
